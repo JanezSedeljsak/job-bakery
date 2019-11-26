@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jobs</h1>
+
+<% @jobs.each do |job| %>
+<div class="card" style="width: 30%; float: left; margin: 5px">
+  <img src="https://i.imgur.com/vCTar9J.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= job.title %></h5>
+    <p class="card-text"><%= job.body %></p>
+    <%= link_to 'Show', job, class:'btn btn-primary' %>
+    <%= link_to 'Edit', edit_job_path(job), class:'btn btn-primary' %>
+    <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-primary' %>
+  </div>
+</div>
+<% end %>
+
+<br style="clear: both">
+
+<%= link_to 'New Job', new_job_path %>
