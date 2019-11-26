@@ -28,6 +28,7 @@
       display: block;
       text-align: center;
       font-size: 14px;
+      height: 50px !important;
     }
     .nav-side-menu .toggle-btn {
       display: none;
@@ -161,32 +162,31 @@
 
 
   <body>
-  <!--Created by- https://bootsnipp.com/ishwarkatwe-->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="nav-side-menu">
-    <div class="brand">Pekarna Služb</div>
+    <div class="brand"><h3 style="padding: 5px">Pekarna Služb</h3></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-  
-        <div class="menu-list">
-  
-            <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                  <a href="#">
-                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
-                  </a>
-                </li>
-                 <li>
-                  <a href="#">
-                  <i class="fa fa-user fa-lg"></i> Profile
-                  </a>
-                  </li>
-
-                 <li>
-                  <a href="#">
-                  <i class="fa fa-users fa-lg"></i> Users
-                  </a>
-                </li>
+<li>
+    <a href="/">
+    <i class="fa fa-home" aria-hidden="true"></i> Home
+    </a>
+</li>   
+<% if user_signed_in? %>
+<li>
+<%= link_to(current_user.email, edit_user_registration_path) %>
+</li>
+<li>
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+</li>
+<% else %>
+<li>
+<%= link_to('Login', new_user_session_path) %>  
+</li>
+<li>
+<%= link_to('Register', new_user_registration_path) %>
+</li>
+<% end %>
             </ul>
      </div>
 </div>
