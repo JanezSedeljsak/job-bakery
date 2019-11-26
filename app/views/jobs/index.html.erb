@@ -8,9 +8,9 @@
   <div class="card-body">
     <h5 class="card-title"><%= job.title %></h5>
     <p class="card-text"><%= job.body %></p>
-    <%= link_to 'Edit', edit_job_path(job), class:'btn btn-primary' %>
-    <%= link_to 'Details', job, class:'btn btn-dark' %>
-    <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-dark' %>
+    <%= link_to 'Edit', edit_job_path(job), class:'btn btn-primary text-white' %>
+    <%= link_to 'Details', job, class:'btn btn-dark text-white' %>
+    <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger text-white' %>
   </div>
 </div>
 <% end %>
