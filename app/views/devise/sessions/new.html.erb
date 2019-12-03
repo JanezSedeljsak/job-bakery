@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2>Sign in</h2>
     <style>
       .btn-google {
         background: #ad1111;
@@ -9,7 +9,7 @@
     </style>
     <div class="card card-signin my-5" style="margin-left: 400px; width: 500px">
       <div class="card-body">
-        <h5 class="card-title text-center">Sign In</h5>
+        <h5 class="card-title text-center">Sign in</h5>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-label-group">
             <label for="inputEmail">Email address</label>
@@ -24,7 +24,7 @@
           <div class="custom-control custom-checkbox mb-3">
           </div>
           
-          <%= f.submit "Log in", class:'btn btn-lg btn-primary btn-block text-uppercase' %>
+          <%= f.submit "Sign in", class:'btn btn-lg btn-primary btn-block text-uppercase' %>
           <hr class="my-4">
           <button class="btn btn-lg btn-google btn-block text-uppercase text-white" type="submit">Sign in with Google</button>
           <button class="btn btn-lg btn-facebook btn-block text-uppercase text-white" type="submit">Sign in with Facebook</button>
