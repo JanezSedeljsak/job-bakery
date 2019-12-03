@@ -1,3 +1,5 @@
+<h1>Jobs</h1>
+
 <p id="notice"><%= notice %></p>
 <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="Jobs">
@@ -6,7 +8,19 @@
   </div>
 </div>
 
-<h1>Jobs</h1>
+<div class="btn-group dropleft" style="float: right">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort By
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Date | ASC</a>
+    <a class="dropdown-item" href="#">Date | DESC</a>
+    <a class="dropdown-item" href="#">Alphabetical | ASC</a>
+    <a class="dropdown-item" href="#">Alphabetical | DESC</a>
+  </div>
+</div>
+
+<br style="clear:both"/>
 
 <% @jobs.each do |job| %>
 <div class="card" style="width: 30%; float: left; margin: 5px">
