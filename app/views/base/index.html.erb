@@ -6,11 +6,17 @@
         padding:0 !important;
         
       }
+
+      .big-container {
+        left: 0 !important;
+      }
       
       .hero{
-        position:relative;
+        position:absolute;
         height:100vh;
         width:100vw;
+        left: 0;
+        top: 0;
         display:flex;
         justify-content:center;
         align-items: center;
@@ -74,8 +80,39 @@
       <h2 class="hero-subtitle">
         "The best way to predict the future is to create it." —Abraham Lincoln
       </h2>
-  
-      <button type="button" class="hero-button" >Search for Games
-      </button>
+      <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="btn-group dropleft">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Podrocje
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Date | ASC</a>
+                <a class="dropdown-item" href="#">Date | DESC</a>
+                <a class="dropdown-item" href="#">Alphabetical | ASC</a>
+                <a class="dropdown-item" href="#">Alphabetical | DESC</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="btn-group dropleft">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lokacija
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Date | ASC</a>
+                <a class="dropdown-item" href="#">Date | DESC</a>
+                <a class="dropdown-item" href="#">Alphabetical | ASC</a>
+                <a class="dropdown-item" href="#">Alphabetical | DESC</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm">
+        <button type="button" class="btn btn-primary" onclick="window.location = '/jobs'" >Search for jobs
+        </button>
+        </div>
+      </div>
+    </div>
     </div>
   </section>    
