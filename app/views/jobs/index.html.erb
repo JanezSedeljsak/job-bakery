@@ -37,4 +37,6 @@
 
 <br style="clear: both">
 
-<%= link_to 'New Job', new_job_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Job', new_job_path %>
+<% end %>

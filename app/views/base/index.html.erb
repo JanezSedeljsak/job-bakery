@@ -29,7 +29,7 @@
         left:0;
         width:100%;
         height:100%;
-        background: url(https://wallpaperaccess.com/full/1393376.jpg);
+        background: url(https://wallpaperaccess.com/full/135973.jpg);
         background-repeat:no-repeat;
         background-size:cover;
         background-position: center center;
@@ -40,7 +40,7 @@
       .hero-content{
         position: relative;
         font-family: "Monserrat", sans-serif;
-        color: white;
+        color: #333;
         text-align: center;
         margin: 0.625rem;
         
@@ -72,44 +72,44 @@
          border: 1px solid #3291AA;
       }
     </style>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Amatic+SC&display=swap" rel="stylesheet">
     <section class="hero">
-    <div class="hero-content">
+    <div class="hero-content" style="border-radius: 10px; width: 100vw; box-shadow: 0 10px 10px #333; background: #eeeeeeaa; padding: 10px">
       <h1 class= "hero-title">
-        Find your way to success
+        Job Backerei
       </h1>
-      <h2 class="hero-subtitle">
+      <h2 class="hero-subtitle" style="font-family: 'Amatic SC', cursive; color: #111">
         "The best way to predict the future is to create it." —Abraham Lincoln
       </h2>
       <div class="container">
       <div class="row">
         <div class="col-sm">
           <div class="btn-group dropleft">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Podrocje
+              <button id="area_" style="border-bottom: 3px solid #80e5ff; width: 10vw" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Job Title
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Date | ASC</a>
-                <a class="dropdown-item" href="#">Date | DESC</a>
-                <a class="dropdown-item" href="#">Alphabetical | ASC</a>
-                <a class="dropdown-item" href="#">Alphabetical | DESC</a>
+              <% @areas.each do |area| %>
+                <a class="dropdown-item" onclick="window.event.preventDefault(); document.getElementById('area_').innerHTML = '<%= area.title %>'" href="#"><%= area.title %></a>
+              <% end %>
               </div>
           </div>
         </div>
         <div class="col-sm">
           <div class="btn-group dropleft">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Lokacija
+              <button id="loaction_" style="border-bottom: 3px solid #80e5ff; width: 10vw" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Location
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Date | ASC</a>
-                <a class="dropdown-item" href="#">Date | DESC</a>
-                <a class="dropdown-item" href="#">Alphabetical | ASC</a>
-                <a class="dropdown-item" href="#">Alphabetical | DESC</a>
+              <% @locations.each do |location| %>
+                <a class="dropdown-item" onclick="window.event.preventDefault(); document.getElementById('loaction_').innerHTML = '<%= location.title %>'" href="#"><%= location.title %>&nbsp;|&nbsp;<%= location.postcode %></a>
+              <% end %>
               </div>
           </div>
         </div>
         <div class="col-sm">
-        <button type="button" class="btn btn-primary" onclick="window.location = '/jobs'" >Search for jobs
+        <button style="width: 10vw" type="button" class="btn btn-primary" onclick="window.location = '/jobs'" >
+          Search for jobs
         </button>
         </div>
       </div>
