@@ -32,9 +32,14 @@
         <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
       </div>
     
-      <div style="margin-bottom: 20px" class="form-label-group">
+      <div class="form-label-group">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
+      </div>
+
+      <div style="margin-bottom: 20px" class="form-check">
+        <%= f.check_box :isCompany, class:'form-check-input' %>
+        <label class="form-check-label" for="exampleCheck1">Are you a compnay?</label>
       </div>
           
           <%= f.submit "Sign up", class:'btn btn-lg btn-primary btn-block text-uppercase' %>
