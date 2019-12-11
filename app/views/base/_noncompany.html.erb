@@ -74,44 +74,27 @@
     </style>
     <section class="hero">
     <div class="hero-content" style="border-radius: 10px; width: 100vw; box-shadow: 0 10px 10px #333; background: #eeeeeeca; padding: 10px">
-      <h1 class= "hero-title" style="font-family: 'Rubik', sans-serif;">
+      <h2 class= "hero-title" style="font-family: 'Rubik', sans-serif;">
         Job Backerei
-      </h1>
-      <h1 class="hero-subtitle" style="font-family: 'Amatic SC', cursive; color: #000">
+      </h2>
+      <h2 class="hero-subtitle" style="font-family: 'Amatic SC', cursive; color: #000">
         "The best way to predict the future is to create it." —Abraham Lincoln
-      </h1>
+      </h2>
       <div class="container">
       <div class="row">
-        <div class="col-sm">
-          <div class="btn-group dropleft">
-              <button id="area_" style="border-bottom: 3px solid #0099cc; width: 10vw" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Job Title
-              </button>
-              <div class="dropdown-menu">
-              <% @areas.each do |area| %>
-                <a class="dropdown-item" onclick="window.event.preventDefault(); document.getElementById('area_').innerHTML = '<%= area.title %>'" href="#"><%= area.title %></a>
-              <% end %>
-              </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="btn-group dropleft">
-              <button id="loaction_" style="border-bottom: 3px solid #0099cc; width: 10vw" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Location
-              </button>
-              <div class="dropdown-menu">
-              <% @locations.each do |location| %>
-                <a class="dropdown-item" onclick="window.event.preventDefault(); document.getElementById('loaction_').innerHTML = '<%= location.title %>'" href="#"><%= location.title %>&nbsp;|&nbsp;<%= location.postcode %></a>
-              <% end %>
-              </div>
-          </div>
+        <%= render 'base/btngroup'%>
         </div>
         <div class="col-sm">
         <button style="width: 10vw" type="button" class="btn btn-primary" onclick="window.location = '/jobs'" >
           Search for jobs
         </button>
         </div>
-      </div>
+      </div> 
+      <% if !current_user %>
+        <hr/>
+        <%= link_to('Login', new_user_session_path, class:"right") %>
+        <style> .right { float: right } </style> 
+      <% end %>
     </div>
     </div>
   </section>    

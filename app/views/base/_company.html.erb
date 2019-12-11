@@ -1,0 +1,21 @@
+<h1>Your Jobs</h1>
+<p id="notice"><%= notice %></p>
+
+<% @jobs.each do |job| %>
+<div class="card" style="width: 30%; float: left; margin: 5px">
+  <img src="https://i.imgur.com/vCTar9J.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= job.title %></h5>
+    <p class="card-text"><%= job.body %></p>
+    <%= link_to 'Edit', edit_job_path(job), class:'btn btn-primary text-white' %>
+    <%= link_to 'Details', job, class:'btn btn-dark text-white' %>
+    <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger text-white' %>
+  </div>
+</div>
+<% end %>
+
+<br style="clear: both">
+
+<% if user_signed_in? %>
+  <%= link_to 'New Job', new_job_path %>
+<% end %>
