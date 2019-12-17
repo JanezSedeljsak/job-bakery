@@ -2,6 +2,11 @@
 <button onclick="window.location='/jobs'" class="btn btn-primary">
   View all jobs
 </button>
+<% if user_signed_in? %>
+  <button onclick="window.location='/jobs/new'" class="btn btn-primary">
+    Add new job
+  </button>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <% @jobs.each do |job| %>
@@ -9,7 +14,8 @@
   <img src="https://i.imgur.com/vCTar9J.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><%= job.title %></h5>
-    <p class="card-text" style="white-space: nowrap;"><%= job.body[0..20] %></p>
+    <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    <hr style="border-top: 1px solid #444;" />
     <%= link_to 'Edit', edit_job_path(job), class:'btn btn-primary text-white' %>
     <%= link_to 'Details', job, class:'btn btn-dark text-white' %>
     <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger text-white' %>
@@ -18,9 +24,3 @@
 <% end %>
 
 <br style="clear: both">
-
-<% if user_signed_in? %>
-  <button onclick="window.location='/jobs/new'" class="btn btn-primary">
-    Add new job
-  </button>
-<% end %>
