@@ -6,19 +6,29 @@
       <a href="/">
       <i class="fa fa-home" aria-hidden="true"></i> Home
       </a>
+    </li>
+    <li>
+        <a href="/jobs">
+        <i class="fa fa-briefcase" aria-hidden="true"></i> Jobs
+       </a>
+      
   </li>   
   <% if user_signed_in? %>
   <li>
+  <i class="fa fa-pencil" aria-hidden="true"></i>
   <%= link_to(current_user.email, edit_user_registration_path) %>
   </li>
   <li>
+  <i class="fa fa-sign-in" aria-hidden="true"></i>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
   </li>
   <% else %>
   <li>
+  <i class="fa fa-sign-in" aria-hidden="true"></i>
   <%= link_to('Login', new_user_session_path) %>  
   </li>
   <li>
+  <i class="fa fa-sign-in" aria-hidden="true"></i>
   <%= link_to('Register', new_user_registration_path) %>
   </li>
   <% end %>
@@ -31,23 +41,33 @@
       <div class="nav-side-menu">
       <div class="brand"><h3 style="padding: 5px">Pekarna Služb</h3></div>
       <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-        <li>
-            <a href="/">
-            <i class="fa fa-home" aria-hidden="true"></i> Home
-            </a>
-        </li>   
+   <li>
+      <a href="/">
+      <i class="fa fa-home" aria-hidden="true"></i> Home
+      </a>
+    </li>
+    <li>
+        <a href="/jobs">
+        <i class="fa fa-briefcase" aria-hidden="true"></i> Jobs
+       </a>
+      
+  </li>  
         <% if user_signed_in? %>
         <li>
+        <i class="fa fa-pencil" aria-hidden="true"></i>
         <%= link_to(current_user.email, edit_user_registration_path) %>
         </li>
         <li>
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
         </li>
         <% else %>
         <li>
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
         <%= link_to('Login', new_user_session_path) %>  
         </li>
         <li>
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
         <%= link_to('Register', new_user_registration_path) %>
         </li>
         <% end %>
