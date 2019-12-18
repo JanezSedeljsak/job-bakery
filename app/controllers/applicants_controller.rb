@@ -22,7 +22,8 @@ class ApplicantsController < ApplicationController
   end
 
   def apply 
-    render :template => "base/_company"
+    msg = {:token => "fsdsdf", :courseId => "dsfd"}
+    render :json => msg
   end
 
   # POST /applicants
