@@ -1,0 +1,23 @@
+<% if @applicants.length == 0 %>
+    <table class="table" style="border-radius: 10px; width: calc(100vw - 450px);">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Ime & Priimek</th>
+        <th scope="col">Gmail</th>
+        </tr>
+    </thead>
+    <tbody style="background: #eeeeee99">
+        <% @applicants.each do |applicant| %>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+<% else %>
+    <h2 class="text-white">No Applicatns yet</h2>
+<% end %>

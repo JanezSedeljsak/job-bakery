@@ -16,6 +16,7 @@
     <h5 class="card-title"><%= job.title %></h5>
     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
     <hr style="border-top: 1px solid #444;" />
+    <button style="float:right; margin-left: 10px" class="btn btn-primary">Applicatns</button>
     <%= link_to 'Edit', edit_job_path(job), class:'btn btn-primary text-white' %>
     <%= link_to 'Details', job, class:'btn btn-dark text-white' %>
     <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger text-white' %>

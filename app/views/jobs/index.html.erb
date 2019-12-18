@@ -37,6 +37,11 @@
     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
     <hr style="border-top: 1px solid #444;" />
     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    <% if current_user %>
+      <% if !current_user.company %>
+        <button style="float:right; margin-left: 10px" class="btn btn-primary">Apply</button>
+      <% end %>
+    <% end %>
     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
   </div>
 </div>

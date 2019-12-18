@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /jobs
   # GET /jobs.json
@@ -36,6 +37,11 @@ class JobsController < ApplicationController
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def applicants
+    @applicants = Applicant.all
+    render :template => "jobs/_applicatns"
   end
 
   # PATCH/PUT /jobs/1

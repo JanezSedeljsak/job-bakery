@@ -13612,3 +13612,1743 @@ Processing by BaseController#index as HTML
 Completed 200 OK in 178ms (Views: 173.3ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2019-12-18 08:11:32 +0100
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (2.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (2.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (56.6ms)
+  Rendered base/_noncompany.html.erb within layouts/application (76.8ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 2806ms (Views: 2733.0ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/applicatns" for ::1 at 2019-12-18 08:16:16 +0100
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6791916658739835)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApplicants (20191218071552)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.8ms)[0m  [1m[35mCREATE TABLE "applicants" ("id" bigserial primary key, "User_id" bigint, "Job_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4e515d1bc5"
+FOREIGN KEY ("User_id")
+  REFERENCES "Users" ("id")
+, CONSTRAINT "fk_rails_90b9923f5f"
+FOREIGN KEY ("Job_id")
+  REFERENCES "Jobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6791916658739835)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6791916658739835)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCompanyToUser (20191211072115)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.1ms)[0m  [1m[35mALTER TABLE "users" DROP "company"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20191211072115"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6791916658739835)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6791916658739835)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCompanyToUser (20191211072115)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "users" ADD "company" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211072115"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApplicants (20191218071552)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "applicants" ("id" bigserial primary key, "users_id" bigint, "jobs_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e977793e17"
+FOREIGN KEY ("users_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_fdb9d0fb00"
+FOREIGN KEY ("jobs_id")
+  REFERENCES "jobs" ("id")
+)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_applicants_on_users_id" ON "applicants"  ("users_id")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_applicants_on_jobs_id" ON "applicants"  ("jobs_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191218071552"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6791916658739835)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/applicatns" for ::1 at 2019-12-18 08:19:12 +0100
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/applicatns"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applicants" for ::1 at 2019-12-18 08:19:17 +0100
+Processing by ApplicantsController#index as HTML
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (3.7ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered applicants/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.erb (3.8ms)
+Completed 200 OK in 6055ms (Views: 6014.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/applicants/new" for ::1 at 2019-12-18 08:19:26 +0100
+Processing by ApplicantsController#new as HTML
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (154.3ms)
+  Rendered applicants/new.html.erb within layouts/application (158.2ms)
+  Rendered layouts/_header.erb (1.2ms)
+Completed 200 OK in 326ms (Views: 312.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/applicants/new" for ::1 at 2019-12-18 08:21:36 +0100
+Processing by ApplicantsController#new as HTML
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (2.8ms)
+  Rendered applicants/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 162ms (Views: 159.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:21:38 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (2.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (116.9ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 14.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `iscompany' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if !current_user.iscompany %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_111891480'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_111891480'
+Started GET "/jobs" for ::1 at 2019-12-18 08:21:58 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if !current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_132246000'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_132246000'
+Started GET "/jobs" for ::1 at 2019-12-18 08:22:35 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_123221820'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_123221820'
+Started GET "/jobs" for ::1 at 2019-12-18 08:22:36 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_133527040'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_133527040'
+Started GET "/jobs" for ::1 at 2019-12-18 08:22:37 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_104119840'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_104119840'
+Started GET "/jobs" for ::1 at 2019-12-18 08:22:38 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_110554580'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_110554580'
+Started GET "/jobs" for ::1 at 2019-12-18 08:22:39 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_126897260'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_126897260'
+Started GET "/jobs" for ::1 at 2019-12-18 08:22:40 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for nil:NilClass):
+    37:     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+    38:     <hr style="border-top: 1px solid #444;" />
+    39:     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    40:     <% if current_user.company %>
+    41:       <button class="btn btn-dark">Apply</button>
+    42:     <% end %>
+    43:     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+  
+app/views/jobs/index.html.erb:40:in `block in _app_views_jobs_index_html_erb__396793250_107585680'
+app/views/jobs/index.html.erb:32:in `_app_views_jobs_index_html_erb__396793250_107585680'
+Started GET "/applicants" for ::1 at 2019-12-18 08:23:29 +0100
+Processing by ApplicantsController#index as HTML
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.3ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered applicants/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.erb (1.4ms)
+Completed 200 OK in 160ms (Views: 157.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:23:32 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 191ms (Views: 174.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 08:23:36 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.7ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 212ms (Views: 200.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 08:23:40 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7tGTnza+r+iVhnnDtAFxSt3K0KbVjJydIm4S91P+LhVMZJcU2R59Q2WDTE8p4S+DxNfT8RrmscucR2LVVql6EQ==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janez.sedeljsak@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 229ms (ActiveRecord: 0.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7tGTnza+r+iVhnnDtAFxSt3K0KbVjJydIm4S91P+LhVMZJcU2R59Q2WDTE8p4S+DxNfT8RrmscucR2LVVql6EQ==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 304ms (Views: 153.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 08:23:44 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEQNEOFtW+0m67nZaLbdIuO8zQSQRyoDkynq56tf4ly+cRx25nkekm5mVY7gpEaF0ymPtAqziYwRAzUXqzFZxA==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janez.sedeljsak@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 178ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:23:44 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (2.1ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (2.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (27.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (31.2ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 212ms (Views: 187.4ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:23:47 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_header.erb (1.2ms)
+Completed 200 OK in 172ms (Views: 167.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 08:23:58 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:23:58 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.9ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 165ms (Views: 160.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:23:59 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 159.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:24:10 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 173ms (Views: 155.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:24:22 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 181ms (Views: 163.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:24:31 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 185ms (Views: 168.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:24:38 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 161.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:25:17 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 157ms (Views: 152.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:25:36 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 191ms (Views: 173.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:25:46 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 177ms (Views: 160.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:26:24 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 176ms (Views: 171.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-18 08:26:26 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nxfaAbDierFSgytatjHjmxa9xJNsgvlSBu76Epmo2Zp3HfMMmg08jmMft7X33Fm0+S6KSN6ngDvCX+j85+zDfQ=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:26:26 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (5.6ms)
+  Rendered base/_noncompany.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 181ms (Views: 179.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 08:26:28 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 161ms (Views: 159.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 08:26:31 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PJJRUi2xNQ5/NlQ6Zf1FccwsDwz3gX1/X8C5ZRZ5xhSxcyKhvzhsF7fWZOPzf9S2fpX9KEBEABoQ2sflsZe0zw==", "user"=>{"email"=>"gorenje1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gorenje1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:26:32 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 154ms (Views: 150.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:26:35 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 177ms (Views: 169.0ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-18 08:27:14 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"shC4hURucci6KtNi1cW6KDTgxI1ZPf0uxWFHaMgXG7GoOxWJf/vQptP3GQaLO/EooG7CCRrWAL62zGyTJb5dMA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:27:14 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.9ms)
+  Rendered base/_noncompany.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 176ms (Views: 173.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 08:27:16 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 169ms (Views: 167.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 08:27:23 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCckElIdYCD15nlyV5Uj93h7DdruWITlccZeEQOR4ZFBzc6/0xX9zO9+lfjCJwdTZnVBEvqrA5drPYjqY5Xk5A==", "user"=>{"email"=>"gorenje@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gorenje@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCckElIdYCD15nlyV5Uj93h7DdruWITlccZeEQOR4ZFBzc6/0xX9zO9+lfjCJwdTZnVBEvqrA5drPYjqY5Xk5A==", "user"=>{"email"=>"gorenje@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 314ms (Views: 163.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 08:27:27 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szJr3AgnA8GChpFTXAHrwYq6KvKN80sHVgdK+RNbMEVQWP6kJhSUdL0caxqqhChLF+LGUBQqo5PCBsMtfhxz/A==", "user"=>{"email"=>"gorenje1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gorenje1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:27:28 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (3.9ms)
+  Rendered base/_noncompany.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 164ms (Views: 160.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:31:07 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 212ms (Views: 206.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:34:10 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 209ms (Views: 174.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/jobs/1" for ::1 at 2019-12-18 08:34:22 +0100
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 173ms (Views: 165.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:34:25 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 197ms (Views: 192.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:34:29 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 186ms (Views: 181.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:34:32 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 186ms (Views: 181.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:34:34 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 179ms (Views: 172.1ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-18 08:36:12 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"i3leKH81qMOY1u1YO8J5y/g7JAembM2sjqjHmOHXsSm0274x93Q7mmpuAK2Jpgm+qMO7c3VYtq9r+8x/HJH72w=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:36:12 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (22.2ms)
+  Rendered base/_noncompany.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_header.erb (1.2ms)
+Completed 200 OK in 206ms (Views: 188.7ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 08:36:14 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 178ms (Views: 176.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 08:36:19 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FqT6r9BpoQoGDhuYRc7t6s8FMKVoCdVaOzc5wy/xKySqWDCToaZGXPD//diPLKp9dXTp1W6DYGA73MXTpNP61A==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janez.sedeljsak@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 08:36:19 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.6ms)
+  Rendered base/_noncompany.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 195ms (Views: 190.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 08:36:21 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (28.6ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 199ms (Views: 182.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/jobs/applicatns/1" for ::1 at 2019-12-18 08:57:53 +0100
+Processing by JobsController#applicants as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 204ms (Views: 177.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/jobs/applicatns/1" for ::1 at 2019-12-18 08:58:34 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.erb (3.2ms)
+Completed 200 OK in 260ms (Views: 234.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 08:58:37 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 202ms (Views: 196.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 08:59:34 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.8ms)
+Completed 200 OK in 205ms (Views: 201.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:00:03 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 174.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:00:24 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.6ms)
+Completed 200 OK in 197ms (Views: 193.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:00:43 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.5ms)
+Completed 200 OK in 171ms (Views: 167.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:00:55 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 185ms (Views: 180.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:01:03 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.erb (1.7ms)
+Completed 200 OK in 214ms (Views: 208.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:01:10 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 177ms (Views: 172.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:01:16 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (23.1ms)
+  Rendered base/_noncompany.html.erb within layouts/application (28.8ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 221ms (Views: 200.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:01:26 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 185ms (Views: 181.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:01:29 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.4ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 183ms (Views: 179.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:01:31 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (6.1ms)
+  Rendered base/_noncompany.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 158ms (Views: 152.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:01:44 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.7ms)
+  Rendered base/_noncompany.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 204ms (Views: 199.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:01:47 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (5.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_header.erb (1.6ms)
+Completed 200 OK in 174ms (Views: 168.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:01:47 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (3.9ms)
+  Rendered base/_noncompany.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 186ms (Views: 182.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:02:20 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.6ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 189ms (Views: 183.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:02:22 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (33.5ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 230ms (Views: 211.8ms | ActiveRecord: 6.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-18 09:02:27 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wJZr8jq8jmGUXtVT0H+2InvZpldN43JgP6VbvXrApDVzx7E0Z1kBp3ohjsEFqap1KT6UcMo82Ib/ULBJfOYvig=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:02:27 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.2ms)
+  Rendered base/_noncompany.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 201ms (Views: 199.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 09:02:28 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.erb (1.4ms)
+Completed 200 OK in 183ms (Views: 181.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 09:02:32 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LkjNiB6BqmKJiOvUbVLVaWeH3975JEqzn8Ei6xPaHk4YdMs1q2Q2adcD3L74+om0ChDhN7tsy++Mw0Yb585b8w==", "user"=>{"email"=>"gorenje1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gorenje1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 167ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:02:32 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.erb (1.5ms)
+Completed 200 OK in 192ms (Views: 188.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/jobs/1" for ::1 at 2019-12-18 09:02:49 +0100
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 202ms (Views: 192.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:02:52 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 182ms (Views: 177.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/jobs/1" for ::1 at 2019-12-18 09:02:53 +0100
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.erb (1.2ms)
+Completed 200 OK in 170ms (Views: 162.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:03:06 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 173ms (Views: 168.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:03:09 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 244ms (Views: 238.3ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-18 09:03:11 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dPwoaWCnPza9Hw6sCEDUCKRCT7YTNjAC8yv1Yl+lJBbARIZoIX5oyMadjOuOCBTpFP2OTsN4YBOy96I9POYsrA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:03:11 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.2ms)
+  Rendered base/_noncompany.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 181ms (Views: 179.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 09:03:15 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.erb (1.9ms)
+Completed 200 OK in 176ms (Views: 174.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:04:29 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_header.erb (1.4ms)
+Completed 200 OK in 201ms (Views: 194.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:04:31 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.4ms)
+  Rendered base/_noncompany.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.erb (1.2ms)
+Completed 200 OK in 172ms (Views: 170.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:04:33 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_header.erb (2.6ms)
+Completed 200 OK in 211ms (Views: 205.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 09:04:36 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.erb (1.3ms)
+Completed 200 OK in 184ms (Views: 182.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 09:04:42 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fELxJ1bDNmPiUMEVCwH5rybGTwZa//JDMu3cHJk3fsoKMVHnOCc38rD4d78GnnuW+xRaGjeJ8aEsKakZUxomdA==", "user"=>{"email"=>"gorenje1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gorenje1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:04:43 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 10[0m
+  Rendered base/_company.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.erb (1.5ms)
+Completed 200 OK in 172ms (Views: 167.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:04:54 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.6ms)
+Completed 200 OK in 173ms (Views: 167.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:05:13 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 183ms (Views: 178.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:05:20 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 174ms (Views: 169.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:05:49 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 170ms (Views: 167.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:06:05 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.3ms)
+Completed 200 OK in 192ms (Views: 188.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:06:08 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 163ms (Views: 159.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:06:15 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 177ms (Views: 173.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:10:07 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 179ms (Views: 175.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:10:16 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.9ms)
+Completed 200 OK in 190ms (Views: 186.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:10:21 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.3ms)
+Completed 200 OK in 181ms (Views: 176.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:10:33 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 172ms (Views: 168.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:10:39 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.erb (1.2ms)
+Completed 200 OK in 188ms (Views: 183.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:11:06 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.erb (1.7ms)
+Completed 200 OK in 198ms (Views: 194.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:13:14 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_header.erb (1.3ms)
+Completed 200 OK in 309ms (Views: 268.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:13:45 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  Rendered jobs/_applicatns.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     7:     </tr>
+     8:   </thead>
+     9:   <tbody style="background: #eeeeee99">
+    10:     <% @jobs.each do |job| %>
+    11:         <tr>
+    12:             <th scope="row">1</th>
+    13:             <td>Mark</td>
+  
+app/views/jobs/_applicatns.html.erb:10:in `_app_views_jobs__applicatns_html_erb__277478512_111746940'
+app/controllers/jobs_controller.rb:44:in `applicants'
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:14:05 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  [1m[36mApplicant Load (0.5ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered jobs/_applicatns.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.erb (1.9ms)
+Completed 200 OK in 205ms (Views: 199.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:15:20 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  [1m[36mApplicant Load (0.4ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered jobs/_applicatns.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.erb (1.5ms)
+Completed 200 OK in 197ms (Views: 193.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:15:22 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  [1m[36mApplicant Load (0.6ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered jobs/_applicatns.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.erb (1.5ms)
+Completed 200 OK in 165ms (Views: 161.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:15:32 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  [1m[36mApplicant Load (0.4ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered jobs/_applicatns.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 187ms (Views: 182.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/jobs/applicatns/5" for ::1 at 2019-12-18 09:15:48 +0100
+Processing by JobsController#applicants as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering jobs/_applicatns.html.erb within layouts/application
+  [1m[36mApplicant Load (0.5ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  Rendered jobs/_applicatns.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 165ms (Views: 161.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-18 09:16:45 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YkCYg2BrL3o6lhaIVMOXcpPYGaz23w1OjKNwEh+Hy5ZUpCdIZ+jlyWh21bW2YPxgsXqmRf1jZWWkXHx0v4VPcw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:16:45 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (26.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (30.1ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 239ms (Views: 221.4ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 09:16:47 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.erb (2.1ms)
+Completed 200 OK in 171ms (Views: 170.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 09:16:51 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnTqSewDJmOTKNUX7NHM3qLciUUp4ZNlbrgA5cbexzKR24wmVNnKthA5MWqN+Q3TCq5AP5tFp2XGRirRCscX7w==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janez.sedeljsak@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 157ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnTqSewDJmOTKNUX7NHM3qLciUUp4ZNlbrgA5cbexzKR24wmVNnKthA5MWqN+Q3TCq5AP5tFp2XGRirRCscX7w==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 329ms (Views: 176.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-18 09:16:54 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UoKJ1iVTAzGhQljcZ6zvhP4c2/g4UwM4w8bxn0uJSTrqi8asjGYjq1FEbFlJANh9SN1LRnRoUcydyE/pweY0Sg==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janez.sedeljsak@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 177ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:16:54 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (5.1ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 216ms (Views: 210.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:16:56 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (27.6ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 200ms (Views: 186.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-18 09:17:27 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:17:27 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.7ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 173.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:17:28 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 217ms (Views: 211.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-12-18 09:17:30 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.erb (1.8ms)
+Completed 200 OK in 194ms (Views: 189.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:17:39 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.6ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 183ms (Views: 178.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:17:40 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 168ms (Views: 163.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-18 09:17:44 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (5.2ms)
+  Rendered base/_noncompany.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_header.erb (0.9ms)
+Completed 200 OK in 183ms (Views: 176.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:17:47 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (15.4ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 240ms (Views: 234.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-18 09:20:54 +0100
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (45.2ms)
+  Rendered layouts/_header.erb (1.1ms)
+Completed 200 OK in 233ms (Views: 209.2ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/apply" for ::1 at 2019-12-18 09:20:56 +0100
+  
+ActionController::RoutingError (uninitialized constant ApplicatnsController):
+  
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/apply" for ::1 at 2019-12-18 09:22:10 +0100
+  
+ActionController::RoutingError (uninitialized constant ApplicatnsController):
+  
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
