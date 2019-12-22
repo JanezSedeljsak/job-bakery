@@ -8,7 +8,7 @@
         <div style="float: left" class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Jobs" id="filtr" />
         <div class="input-group-prepend">
-        <button class="btn btn-primary" onclick='window.location = `#filter=${document.getElementById("filtr").value}`' id="basic-addon1">Search</button>
+        <button class="btn btn-primary" onclick='window.location = `?filter=${document.getElementById("filtr").value}`' id="basic-addon1">Search</button>
         </div>
     </div>
     </div>
@@ -26,10 +26,10 @@
       Sort By
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#o=date&t=asc">Date | ASC</a>
-      <a class="dropdown-item" href="#o=date&t=desc">Date | DESC</a>
-      <a class="dropdown-item" href="#o=alph&t=asc">Alphabetical | ASC</a>
-      <a class="dropdown-item" href="#o=alph&t=desc">Alphabetical | DESC</a>
+      <a class="dropdown-item" href="?o=date&t=asc">Date | ASC</a>
+      <a class="dropdown-item" href="?o=date&t=desc">Date | DESC</a>
+      <a class="dropdown-item" href="?o=alph&t=asc">Alphabetical | ASC</a>
+      <a class="dropdown-item" href="?o=alph&t=desc">Alphabetical | DESC</a>
     </div>
   </div>
     </div>

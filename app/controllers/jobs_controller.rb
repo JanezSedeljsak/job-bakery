@@ -7,9 +7,18 @@ class JobsController < ApplicationController
   def index
     if(request.GET[:filter])
         filter = request.GET[:filter]
-        @jobs = Job.find.where('title LIKE ?', "%#{filter}%")
+        @jobs = Job.where('LOWER(title) LIKE ?', "%#{filter}%")
+    elsif (request.GET[:o] && request.GET[:t])
+        order = request.GET[:o]
+        type = request.GET[:t]
+        if order == 'alph'
+            @jobs = Job.order(title: :"#{type}")
+        else 
+            @jobs = Job.order(created_at: :"#{type}")
+        end
+        
     else 
-        @jobs = Job.all.limit(1)
+        @jobs = Job.all
     end
   end
 
