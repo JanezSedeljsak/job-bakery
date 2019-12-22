@@ -49,9 +49,12 @@
     <hr style="border-top: 1px solid #444;" />
     <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
     <% if current_user %>
-      <% if !current_user.company %>
-        <button style="float:right; margin-left: 10px" onclick="Apply('<%= job.id %>')" class="btn btn-primary">Apply</button>
-      <% end %>
+        <% if !current_user.company && !@applied.include?(job.id) %>
+            <button style="float:right; margin-left: 10px" onclick="Apply('<%= job.id %>')" class="btn btn-primary">Apply</button>
+        <% end %>
+        <% if @applied.include?(job.id) %>
+            <span style="color: #a44">You applied for the job!</span>
+        <% end %> 
     <% end %>
     <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
   </div>
@@ -62,6 +65,7 @@
   function Apply(_id) {
     fetch(`/apply?id=${_id}`).then(response => response.json()).then(result => {
       alert(result.success ? "Succesfully applied for the job" : "Something went wrong!");
+      location.reload();
     })
   }
 </script>

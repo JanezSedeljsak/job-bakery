@@ -20,6 +20,14 @@ class JobsController < ApplicationController
     else 
         @jobs = Job.all
     end
+
+    @applied = []
+
+    if user_signed_in?
+        if(!current_user.company?)
+            @applied = Candidate.where(user: current_user).select(:job_id).map { |n| n["job_id"] }
+        end
+    end
   end
 
   # GET /jobs/1
