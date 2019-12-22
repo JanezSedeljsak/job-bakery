@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191222112749) do
+ActiveRecord::Schema.define(version: 20191222182935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20191222112749) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "job_id"
+    t.bigint "user_id"
+    t.index ["job_id"], name: "index_candidates_on_job_id"
+    t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 
   create_table "commontator_comments", force: :cascade do |t|
@@ -118,6 +127,8 @@ ActiveRecord::Schema.define(version: 20191222112749) do
 
   add_foreign_key "applicants", "jobs", column: "jobs_id"
   add_foreign_key "applicants", "users", column: "users_id"
+  add_foreign_key "candidates", "jobs"
+  add_foreign_key "candidates", "users"
   add_foreign_key "commontator_comments", "commontator_comments", column: "parent_id", on_update: :restrict, on_delete: :cascade
   add_foreign_key "commontator_comments", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "commontator_subscriptions", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade

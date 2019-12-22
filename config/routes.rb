@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  resources :applicants
+  resources :candidates
   resources :areas
   resources :locations
   resources :jobs
-  resources :applicants
   devise_for :users
   root to: "base#index"
-  get '/apply', to: 'applicants#apply'
+  get '/apply', to: 'candidates#new'
   get '/jobs/applicatns/:id', to: 'jobs#applicants'
   get '/profile', to: 'profile#index'
   mount Commontator::Engine => '/commontator'

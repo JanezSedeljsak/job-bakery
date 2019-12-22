@@ -54,7 +54,8 @@ class JobsController < ApplicationController
   end
 
   def applicants
-    @applicants = Applicant.all
+    @job = Job.find(params[:id])
+    @candidates = Candidate.where(job_id: params[:id])
     render :template => "jobs/_applicatns"
   end
 

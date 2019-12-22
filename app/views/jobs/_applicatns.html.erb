@@ -1,18 +1,22 @@
-<% if @applicants.length > 0 %>
+<h2>Candidates for: <%= @job.title %></h2>
+<hr/>
+<% if @candidates.length > 0 %>
     <table class="table" style="border-radius: 10px; width: calc(100vw - 450px);">
     <thead class="thead-dark">
         <tr>
         <th scope="col">#</th>
         <th scope="col">Ime & Priimek</th>
         <th scope="col">Gmail</th>
+        <th scope="col">Date</th>
         </tr>
     </thead>
     <tbody style="background: #eeeeee99">
-        <% @applicants.each_with_index do |applicant, index| %>
+        <% @candidates.each_with_index do |candidate, index| %>
             <tr>
                 <th scope="row"><%= index + 1 %></th>
-                <td><%= applicant.users_id %></td>
-                <td><%= applicant.users_id %></td>
+                <td><%= candidate.user.name %></td>
+                <td><%= candidate.user.email %></td>
+                <td><%= candidate.updated_at.strftime('%m/%d/%Y') %></td>
             </tr>
         <% end %>
     </tbody>
