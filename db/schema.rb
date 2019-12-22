@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191221232902) do
+ActiveRecord::Schema.define(version: 20191222112749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,8 +79,10 @@ ActiveRecord::Schema.define(version: 20191221232902) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "area_id"
-    t.integer "location_id"
+    t.bigint "area_id"
+    t.bigint "location_id"
+    t.index ["area_id"], name: "index_jobs_on_area_id"
+    t.index ["location_id"], name: "index_jobs_on_location_id"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
@@ -119,6 +121,8 @@ ActiveRecord::Schema.define(version: 20191221232902) do
   add_foreign_key "commontator_comments", "commontator_comments", column: "parent_id", on_update: :restrict, on_delete: :cascade
   add_foreign_key "commontator_comments", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "commontator_subscriptions", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "jobs", "areas"
+  add_foreign_key "jobs", "locations"
   add_foreign_key "jobs", "users"
   add_foreign_key "posts", "users"
 end
