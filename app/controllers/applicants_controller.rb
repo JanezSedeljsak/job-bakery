@@ -22,8 +22,15 @@ class ApplicantsController < ApplicationController
   end
 
   def apply 
-    msg = {:token => "fsdsdf", :courseId => "dsfd"}
+    sql = "
+        insert into applicants (users_id, jobs_id, created_at, updated_at) values 
+        (#{current_user.id}, #{request.GET["id"].to_i}, current_date, current_date);
+    "
+    records_array = ActiveRecord::Base.connection.execute(sql)
+
+    msg = {:token => "false", :courseId => "dsfd"}
     render :json => msg
+
   end
 
   # POST /applicants
@@ -74,6 +81,6 @@ class ApplicantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def applicant_params
-      params.require(:applicant).permit(:User_id, :Job_id)
+      params.require(:applicant).permit(:users_id, :jobs_id)
     end
 end
