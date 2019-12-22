@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :jobs
   devise_for :users
   root to: "base#index"
-  get '/apply', to: 'candidates#new'
+  get '/apply', to: 'candidates#apply'
   get '/jobs/applicatns/:id', to: 'jobs#applicants'
   get '/profile', to: 'profile#index'
   mount Commontator::Engine => '/commontator'

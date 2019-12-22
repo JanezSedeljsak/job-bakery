@@ -21,6 +21,19 @@ class CandidatesController < ApplicationController
   def edit
   end
 
+    def apply 
+        @candidate = Candidate.new(job_id: request.GET['id'])
+        @candidate.user_id = current_user.id
+
+        if @candidate.save
+            msg = {:success => true}
+            render :json => msg
+        else
+            msg = {:success => false}
+            render :json => msg
+        end
+    end
+
   # POST /candidates
   # POST /candidates.json
   def create

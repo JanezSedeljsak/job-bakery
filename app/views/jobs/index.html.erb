@@ -61,7 +61,7 @@
 <script>
   function Apply(_id) {
     fetch(`/apply?id=${_id}`).then(response => response.json()).then(result => {
-      console.log(result)
+      alert(result.success ? "Succesfully applied for the job" : "Something went wrong!");
     })
   }
 </script>
