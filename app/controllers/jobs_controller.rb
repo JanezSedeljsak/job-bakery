@@ -5,7 +5,12 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    if(request.GET[:filter])
+        filter = request.GET[:filter]
+        @jobs = Job.find.where('title LIKE ?', "%#{filter}%")
+    else 
+        @jobs = Job.all.limit(1)
+    end
   end
 
   # GET /jobs/1

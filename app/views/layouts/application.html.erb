@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Pekarna Služb</title>
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/pretty-office-part-2-shadow-style/256/Briefcase.png" type="image/x-icon" />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,32 +10,42 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Barlow|Rubik&display=swap" rel="stylesheet">
     <style>
     body {
-      background: url(https://wallpaperaccess.com/full/945996.jpg)
+      background: url(https://i.imgur.com/pesUhWb.png);
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
     }
     h1 {
       font-family: font-family: 'Rubik', sans-serif !important;
-      color: #ddd !important;
-
     }
+
+    .cstm-card {
+        border-radius: 0px !important;
+        border: none !important;
+        box-shadow: 0 12px 6px -6px #222 !important;
+    }
+
     .nav-side-menu {
       overflow: auto;
       font-family: verdana;
       font-size: 12px;
       font-weight: 200;
-      background-color: #2e353d;
+      background-image: url(https://r1.ilikewallpaper.net/iphone-x-wallpapers/download/37110/Paris-dark-blue-city-iphone-x-wallpaper-ilikewallpaper_com.jpg);
+      background-size: 100% 100%;
       position: fixed;
       top: 0px;
-      width: 300px;
+      width: 400px;
       height: 100%;
       color: #e1ffff;
+      box-shadow: 6px 0 3px -2px #222;
     }
+
     .nav-side-menu .brand {
-      background-color: #23282e;
-      line-height: 50px;
+      background-color: transparent;
       display: block;
       text-align: center;
       font-size: 14px;
-      height: 50px !important;
+      height: 180px !important;
     }
     .nav-side-menu .toggle-btn {
       display: none;
@@ -42,8 +53,10 @@
     .nav-side-menu ul,
     .nav-side-menu li {
       list-style: none;
-      padding: 0px;
+      padding: 10px;
+      padding-left: 10px !important;
       margin: 0px;
+      font-size: 19px;
       line-height: 35px;
       cursor: pointer;
       /*    
@@ -93,7 +106,7 @@
     }
     .nav-side-menu ul .sub-menu li:hover,
     .nav-side-menu li .sub-menu li:hover {
-      background-color: #020203;
+      border-bottom: 1px solid blue;
     }
     .nav-side-menu ul .sub-menu li:before,
     .nav-side-menu li .sub-menu li:before {
@@ -106,12 +119,19 @@
     }
     .nav-side-menu li {
       padding-left: 0px;
-      border-left: 3px solid #2e353d;
-      border-bottom: 1px solid #23282e;
     }
     .nav-side-menu li a {
       text-decoration: none;
-      color: #e1ffff;
+      color: #eee;
+      font-weight: bold;
+    }
+
+    .nav-side-menu li a:hover {
+        color: #eee !important;
+    }
+
+    .nav-side-menu li i {
+        color: #ccf !important;
     }
     .nav-side-menu li a i {
       padding-left: 10px;
@@ -119,13 +139,12 @@
       padding-right: 20px;
     }
     .nav-side-menu li:hover {
-      border-left: 3px solid #d19b3d;
-      background-color: #4f5b69;
-      -webkit-transition: all 1s ease;
-      -moz-transition: all 1s ease;
-      -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-      transition: all 1s ease;
+        box-shadow: 0 6px 3px -3px #eee;
+        -webkit-transition: all .1s ease;
+        -moz-transition: all .1s ease;
+        -o-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+        transition: all .1s ease;
     }
     @media (max-width: 767px) {
       .nav-side-menu {
@@ -149,8 +168,8 @@
       .brand {
         text-align: left !important;
         font-size: 22px;
+        height: 100px !important;
         padding-left: 20px;
-        line-height: 50px !important;
       }
     }
     @media (min-width: 767px) {
@@ -165,7 +184,7 @@
     
     a:hover, button:hover {
       background: none !important;
-      color: #333 !important;
+      color: #888 !important;
     }
   </style>
   </head>
@@ -174,7 +193,7 @@
   <body>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <%= render "layouts/header" %>
-<div class="big-container" style="position: absolute; left: 300px; padding: 20px;">
+<div class="big-container" style="position: absolute; left: 400px; padding: 20px; width: 1500px;">
 <%= yield %>
 </div>
   </body>

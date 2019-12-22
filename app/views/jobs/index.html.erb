@@ -2,35 +2,46 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div style="margin-left: -120px" class="row">
-    <div class="col-6"><div  style="float: left" class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Jobs">
-  <div class="input-group-prepend">
-    <button class="btn btn-primary" id="basic-addon1">Search</button>
+<div class="container" style="width: 100%; margin: 0 !important">
+  <div class="row" style="width: 100%">
+    <div class="col-sm">
+        <div style="float: left" class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Jobs" id="filtr" />
+        <div class="input-group-prepend">
+        <button class="btn btn-primary" onclick='window.location = `#filter=${document.getElementById("filtr").value}`' id="basic-addon1">Search</button>
+        </div>
+    </div>
+    </div>
+    <div class="col col-lg-2">
+    <div class="btn-group dropleft" style="width: 100%">
+    <button
+      class="btn btn-primary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+      style="width: 100%"
+    >
+      Sort By
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#o=date&t=asc">Date | ASC</a>
+      <a class="dropdown-item" href="#o=date&t=desc">Date | DESC</a>
+      <a class="dropdown-item" href="#o=alph&t=asc">Alphabetical | ASC</a>
+      <a class="dropdown-item" href="#o=alph&t=desc">Alphabetical | DESC</a>
+    </div>
   </div>
-</div></div>
-    <div class="col"><div class="btn-group dropleft" style="float: right">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sort By
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Date | ASC</a>
-    <a class="dropdown-item" href="#">Date | DESC</a>
-    <a class="dropdown-item" href="#">Alphabetical | ASC</a>
-    <a class="dropdown-item" href="#">Alphabetical | DESC</a>
-  </div>
-</div></div>
+    </div>
   </div>
 </div>
-
 
 
 
 <br style="clear:both"/>
 
 <% @jobs.each do |job| %>
-<div class="card" style="width: 30%; float: left; margin: 5px">
+<div class="card cstm-card" style="width: 30%; float: left; margin: 5px">
   <img src="https://i.imgur.com/vCTar9J.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><%= job.title %></h5>
