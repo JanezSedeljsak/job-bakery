@@ -11,7 +11,7 @@ This is a websystem application that provides employees and companies to find ea
 > 1. Download the project</br>
 > 2. Write: ```bundle```</br>
 > 2. Write: ```rake db:create```</br>
-> 5. Run: ```rails s``
+> 5. Run: ```rails s```
 
 ## Prerequisites
 
