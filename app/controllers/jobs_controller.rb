@@ -21,7 +21,6 @@ class JobsController < ApplicationController
     end
 
     @jobs = Job.where(nil)
-    @jobs = @jobs.where({ "location_id": 1 }) if request.GET["l"]
     @jobs = @jobs.where('LOWER(title) LIKE ?', "%#{request.GET['f'].downcase}%") if request.GET["f"]
     @jobs = @jobs.order("#{request.GET['o'].downcase} #{request.GET['t']}") if request.GET["o"] && request.GET["t"] 
     @jobs = @jobs.where("salary >= ?", request.GET['s'].to_i) if request.GET["s"]
@@ -33,6 +32,7 @@ class JobsController < ApplicationController
 
     if request.GET['l']
         @location_ = Location.where("title LIKE ? ", "%#{request.GET['l']}%").limit(1)[0]['id']
+        p @location_
         @jobs = @jobs.where("location_id": @location_.to_i)
     end
     
