@@ -9,10 +9,9 @@ This is a websystem application that provides employees and companies to find ea
 ## Getting Started
 
 > 1. Download the project</br>
-> 2. Write: ```npm install```</br>
-> 3. Create a database with the telegram_db.sql script</br>
-> 4. Alter the file server/routes/connect.js to connect your database</br>
-> 5. Run 2 different CMDs to run: ```npm run dev``` && npm ```run start-server```
+> 2. Write: ```bundle```</br>
+> 2. Write: ```rake db:create```</br>
+> 5. Run: ```rails s``
 
 ## Prerequisites
 
@@ -21,8 +20,8 @@ This is a websystem application that provides employees and companies to find ea
 * PostgradeSQL
 
 ## Built With
-* [RubyOnRails](https://www.npmjs.com/package/vue)
-* [Bootstrap](https://www.npmjs.com/package/express)
+* [RubyOnRails](https://rubyonrails.org)
+* [Bootstrap](https://getbootstrap.com)
 * some extra js libraries....
 
 ## Features
