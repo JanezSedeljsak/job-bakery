@@ -13,7 +13,7 @@
     </div>
     </div>
     <div class="col col-lg-2">
-    <div class="btn-group dropleft" style="width: 100%">
+    <div class="btn-group dropright" style="width: 100%">
     <button
       class="btn btn-primary dropdown-toggle"
       type="button"
@@ -28,6 +28,8 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href="?o=date&t=asc">Date | ASC</a>
       <a class="dropdown-item" href="?o=date&t=desc">Date | DESC</a>
+      <a class="dropdown-item" href="?o=salary&t=asc">Salary | ASC</a>
+      <a class="dropdown-item" href="?o=salary&t=desc">Salary | DESC</a>
       <a class="dropdown-item" href="?o=alph&t=asc">Alphabetical | ASC</a>
       <a class="dropdown-item" href="?o=alph&t=desc">Alphabetical | DESC</a>
     </div>
@@ -57,6 +59,7 @@
         <i class="fa fa-calendar-o" aria-hidden="true"></i> Updated: <b><%= job.updated_at.strftime('%m/%d/%Y') %></b><br/>
         <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <b><%= job.location.title + " " + job.location.postcode  %></b><br/>
         <i class="fa fa-briefcase" aria-hidden="true"></i> Area of experties: <b><%= job.area.title %></b><br/>
+        <i class="fa fa-money" aria-hidden="true"></i> Salary estime: <b><%= job.salary %>€</b>
     </p>
     <hr style="border-top: 1px solid #444;" />
     <% if current_user %>

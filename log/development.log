@@ -24443,3 +24443,643 @@ Processing by JobsController#index as HTML
 Completed 200 OK in 262ms (Views: 252.4ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/jobs" for ::1 at 2019-12-26 12:25:44 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 276ms (Views: 244.6ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-26 12:25:46 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NncmB4jOBHRUKC5merj3i2R7ZmJ1afysO30Ws+6wektxcOcD6CVzoDbijEtQiaZf5jwloRbN7hDW9VUXSmgNiA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 11ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:25:46 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 219ms (Views: 219.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-26 12:25:47 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 357ms (Views: 356.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-26 12:25:53 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gWSDPsRXRdvFgSkTUQ2RDaHCyu5xyoQjOcm+LQJk6N3okgfjG7+vvo2VXM0x9nfKqxlfyRulZpYBM1EDBnx4Ig==", "user"=>{"email"=>"janez.sedeljsak@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janez.sedeljsak@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 302 Found in 379ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:25:53 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.erb (0.0ms)
+Completed 200 OK in 219ms (Views: 215.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:25:55 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (0.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 253ms (Views: 241.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apply?id=6" for ::1 at 2019-12-26 12:25:58 +0100
+Processing by CandidatesController#apply as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "candidates" ("created_at", "updated_at", "job_id", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-12-26 11:25:58.593306"], ["updated_at", "2019-12-26 11:25:58.593306"], ["job_id", 6], ["user_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:25:58 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 248ms (Views: 233.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:26:57 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (0.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (28.3ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 280ms (Views: 247.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apply?id=4" for ::1 at 2019-12-26 12:27:00 +0100
+Processing by CandidatesController#apply as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "candidates" ("created_at", "updated_at", "job_id", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-12-26 11:27:00.859671"], ["updated_at", "2019-12-26 11:27:00.859671"], ["job_id", 4], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:27:02 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (0.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 244ms (Views: 233.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:27:39 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 241ms (Views: 239.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:27:43 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 246ms (Views: 235.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apply?id=6" for ::1 at 2019-12-26 12:27:46 +0100
+Processing by CandidatesController#apply as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "candidates" ("created_at", "updated_at", "job_id", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-12-26 11:27:46.995738"], ["updated_at", "2019-12-26 11:27:46.995738"], ["job_id", 6], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:27:49 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (0.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 267ms (Views: 254.6ms | ActiveRecord: 2.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672500073938345810)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddSalaryToJobs (20191226113528)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "jobs" ADD "salary" integer[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191226113528"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672500073938345810)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-12-26 12:37:33 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (27.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (36.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 871ms (Views: 838.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:37:45 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 246ms (Views: 245.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:37:53 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandidate Load (3.0ms)[0m  [1m[34mSELECT "candidates"."job_id" FROM "candidates" WHERE "candidates"."user_id" = 1[0m
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (2.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (76.3ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 355ms (Views: 291.2ms | ActiveRecord: 15.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-26 12:37:56 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ls0vGQkn4OFRDEk0maErBlkqoE6fHZBUMcU+tCWkYd+ekLNm6NjqtWyLcPMjW/NW8ziP8WPL5AIWBbOfSuarZA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 46ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:37:56 +0100
+Processing by BaseController#index as HTML
+  Rendering base/_noncompany.html.erb within layouts/application
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered base/_btngroup.html.erb (4.0ms)
+  Rendered base/_noncompany.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 216ms (Views: 215.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-26 12:37:58 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_header.erb (2.0ms)
+Completed 200 OK in 356ms (Views: 354.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-26 12:38:04 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hLXAwJWBl6ZKV4MHEyirpdWo6hOMfK/u1iLL+F8I1OStQu1ldenA9OycwcJ4yfoC2Gsric2Ry1RlZOS9MO5og==", "user"=>{"email"=>"gorenje@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "gorenje@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 302 Found in 417ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:38:05 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 3[0m
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered base/_company.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_header.erb (2.0ms)
+Completed 200 OK in 236ms (Views: 232.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/6/edit" for ::1 at 2019-12-26 12:38:07 +0100
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered jobs/_form.html.erb (18.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (45.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 263ms (Views: 251.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/6/edit" for ::1 at 2019-12-26 12:38:20 +0100
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered jobs/_form.html.erb (8.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (39.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 260ms (Views: 248.9ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/jobs/6" for ::1 at 2019-12-26 12:38:56 +0100
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IeWf7fMtrS1G9MxGU8HII85ajANldV0+bYaKE2VobPT1TytzOWLpEDtgelC6nPowttI4QEQS2GuxTX68zm3+4Q==", "job"=>{"title"=>"Memster", "body"=>"Iščemo osebo ki zna z memes pa temi forami.....", "salary"=>"6000", "area_id"=>"2", "location_id"=>"2"}, "commit"=>"Sumbit", "id"=>"6"}
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "salary" = $1, "updated_at" = $2 WHERE "jobs"."id" = $3[0m  [["salary", 6000], ["updated_at", "2019-12-26 11:38:56.315769"], ["id", 6]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:8080/jobs/6
+Completed 302 Found in 21ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/jobs/6" for ::1 at 2019-12-26 12:38:56 +0100
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 243ms (Views: 230.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:38:58 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 246ms (Views: 237.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:39:01 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 3[0m
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered base/_company.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 229ms (Views: 223.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/5/edit" for ::1 at 2019-12-26 12:39:04 +0100
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered jobs/_form.html.erb (7.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (36.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 262ms (Views: 250.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:39:05 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 260ms (Views: 249.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:39:09 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 3[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered base/_company.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 222ms (Views: 218.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/6/edit" for ::1 at 2019-12-26 12:39:16 +0100
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered jobs/_form.html.erb (6.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 233ms (Views: 219.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/jobs/6" for ::1 at 2019-12-26 12:39:23 +0100
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.erb (2.0ms)
+Completed 200 OK in 229ms (Views: 219.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for ::1 at 2019-12-26 12:39:24 +0100
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Location Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Area Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLocation Load (1.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (32.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 250ms (Views: 238.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-26 12:39:28 +0100
+Processing by BaseController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering base/_company.html.erb within layouts/application
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = 3[0m
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArea Load (0.0ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered base/_company.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.erb (1.0ms)
+Completed 200 OK in 229ms (Views: 225.7ms | ActiveRecord: 1.0ms)
+
+
