@@ -85,7 +85,7 @@
         <%= render 'base/btngroup'%>
         </div>
         <div class="col-sm">
-        <button style="width: 10vw" type="button" class="btn btn-primary" onclick="window.location = '/jobs'" >
+        <button style="width: 10vw" type="button" class="btn btn-primary" onclick="SearchForJobs()" >
           Search for jobs
         </button>
         </div>
@@ -98,3 +98,21 @@
     </div>
     </div>
   </section>    
+
+
+  <script>
+  function SearchForJobs() {
+    let location = document.getElementById('loaction_').innerHTML.includes("Location") ? 
+        "" : document.getElementById('loaction_').innerHTML;
+
+    let area = document.getElementById('area_').innerHTML.includes("Job") ? 
+        "" : document.getElementById('area_').innerHTML;
+
+    let url = (window.location.origin + "/jobs?");
+
+    url = area ? setUrlParameter(url, "a", area) : url;
+    url = location ? setUrlParameter(url, "l", location) : url;
+
+    window.location = (url);
+  }
+  </script>

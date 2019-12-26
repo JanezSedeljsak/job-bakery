@@ -1,26 +1,41 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /jobs
   # GET /jobs.json
   def index
-    if(request.GET[:filter])
-        filter = request.GET[:filter]
-        @jobs = Job.where('LOWER(title) LIKE ?', "%#{filter}%")
-    elsif (request.GET[:o] && request.GET[:t])
-        order = request.GET[:o]
-        type = request.GET[:t]
-        if order == 'alph'
-            @jobs = Job.order(title: :"#{type}")
-        else 
-            @jobs = Job.order(created_at: :"#{type}")
+    @locations = Location.all
+    @areas = Area.all
+
+    # order filter renaming
+    if request.GET['o']
+        case request.GET['o']
+        when "Date"    
+            request.GET['o'] = "created_at"
+        when "Alphabetical"    
+            request.GET['o'] = "title"
+        else
+            request.GET['o'] = request.GET['o']
         end
-        
-    else 
-        @jobs = Job.all
     end
 
+    @jobs = Job.where(nil)
+    @jobs = @jobs.where({ "location_id": 1 }) if request.GET["l"]
+    @jobs = @jobs.where('LOWER(title) LIKE ?', "%#{request.GET['f'].downcase}%") if request.GET["f"]
+    @jobs = @jobs.order("#{request.GET['o'].downcase} #{request.GET['t']}") if request.GET["o"] && request.GET["t"] 
+    @jobs = @jobs.where("salary >= ?", request.GET['s'].to_i) if request.GET["s"]
+    
+    if request.GET['a']
+        @area_ = Area.where("title LIKE ? ", "%#{request.GET['a']}%").limit(1)[0]['id']
+        @jobs = @jobs.where("area_id": @area_.to_i)
+    end
+
+    if request.GET['l']
+        @location_ = Location.where("title LIKE ? ", "%#{request.GET['l']}%").limit(1)[0]['id']
+        @jobs = @jobs.where("location_id": @location_.to_i)
+    end
+    
     @applied = []
 
     if user_signed_in?

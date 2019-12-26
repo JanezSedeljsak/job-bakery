@@ -1,95 +1,181 @@
-<h1 style="margin-left: 10px">Jobs</h1>
+<style> 
+    *:not(.overflow) {
+    overflow: hidden;
+    }
 
-<p id="notice"><%= notice %></p>
+    ::-webkit-scrollbar {
+    width: 20px;
+    }
 
-<div class="container" style="width: 100%; margin: 0 !important">
-  <div class="row" style="width: 100%">
-    <div class="col-sm">
-        <div style="float: left" class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Jobs" id="filtr" />
-        <div class="input-group-prepend">
-        <button class="btn btn-primary" onclick='window.location = `?filter=${document.getElementById("filtr").value}`' id="basic-addon1">Search</button>
+    /* Track */
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #3b6582; 
+    border-radius: 10px;
+    }
+</style>
+<h1 style="margin-left: 10px"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs:</h1>
+<hr/>
+
+<div class="overflow container" style="margin: 0 !important;  max-width: 1900px !important">
+    <div class="row">
+        <div class="col-md-4"><h2>Filters:</h2></div>
+        <div class="col-md-4"></div>
+        <div style="margin-top: 10px" class="col-md-4">
+            <button style="width: 100%" onclick="filter()" class="btn btn-primary"><i class="fa fa-filter" aria-hidden="true"></i>Filter</button>
         </div>
     </div>
+    <hr/>
+    <div class="row">
+        <div class="col-sm">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" value="<%= request.GET['s'] ? request.GET['s'] : '' %>" placeholder="Min Salary" id="salary_" />
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" value="<%= request.GET['f'] ? request.GET['f'] : '' %>" placeholder="Job title" id="title_" />
+            </div>
+        </div>
     </div>
-    <div class="col col-lg-2">
-    <div class="btn-group dropright" style="width: 100%">
-    <button
-      class="btn btn-primary dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-      style="width: 100%"
-    >
-      Sort By
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="?o=date&t=asc">Date | ASC</a>
-      <a class="dropdown-item" href="?o=date&t=desc">Date | DESC</a>
-      <a class="dropdown-item" href="?o=salary&t=asc">Salary | ASC</a>
-      <a class="dropdown-item" href="?o=salary&t=desc">Salary | DESC</a>
-      <a class="dropdown-item" href="?o=alph&t=asc">Alphabetical | ASC</a>
-      <a class="dropdown-item" href="?o=alph&t=desc">Alphabetical | DESC</a>
+    <div class="overflow row">
+        <div class="overflow col-sm">
+            <div style="width: 100%" class="overflow btn-group dropright">
+                <button id="order_" class="btn btn-secondary dropdown-toggle" style="border-bottom: 3px solid #0099cc; width: 100%" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort By
+                </button>
+                <div class="overflow dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" onclick='window.event.preventDefault(); document.getElementById("order_").innerHTML = this.innerHTML'>Date | ASC</a>
+                    <a class="dropdown-item" onclick='window.event.preventDefault(); document.getElementById("order_").innerHTML = this.innerHTML'>Date | DESC</a>
+                    <a class="dropdown-item" onclick='window.event.preventDefault(); document.getElementById("order_").innerHTML = this.innerHTML'>Salary | ASC</a>
+                    <a class="dropdown-item" onclick='window.event.preventDefault(); document.getElementById("order_").innerHTML = this.innerHTML'>Salary | DESC</a>
+                    <a class="dropdown-item" onclick='window.event.preventDefault(); document.getElementById("order_").innerHTML = this.innerHTML'>Alphabetical | ASC</a>
+                    <a class="dropdown-item" onclick='window.event.preventDefault(); document.getElementById("order_").innerHTML = this.innerHTML'>Alphabetical | DESC</a>
+                </div>
+            </div>
+        </div>
+        <div class="overflow col-sm">
+            <div style="width: 100%" class="overflow btn-group dropleft">
+                <button id="area_" style="border-bottom: 3px solid #0099cc; width: 100%" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= request.GET['a'] ? request.GET['a'] : 'Field of expertise' %>
+                </button>
+                <div class="overflow dropdown-menu">
+                    <% @areas.each do |area| %>
+                        <a class="dropdown-item" onclick="window.event.preventDefault(); document.getElementById('area_').innerHTML = '<%= area.title %>'" href="#">
+                            <%= area.title %>
+                        </a>
+                        <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="overflow col-sm">
+            <div style="width: 100%" class="overflow btn-group dropleft">
+                <button id="location_" style="border-bottom: 3px solid #0099cc; width: 100%" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= request.GET['l'] ? request.GET['l'] : 'Location' %>
+                </button>
+                <div class="overflow dropdown-menu">
+                    <% @locations.each do |location| %>
+                        <a class="dropdown-item" onclick="window.event.preventDefault(); document.getElementById('location_').innerHTML = '<%= location.title %>'" href="#">
+                            <%= location.title %>&nbsp;|&nbsp;
+                                <%= location.postcode %>
+                        </a>
+                        <% end %>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    </div>
-  </div>
 </div>
-
-
-
-<br style="clear:both"/>
-
-<% @jobs.each do |job| %>
-<div class="card cstm-card" style="width: 30%; float: left; margin: 7px">
-  <%= image_tag job.attachment,
-    :class => "card-img-top",
-    :style => "height: 13vw; object-fit: cover;", 
-    :onerror => "this.src='https://mobileappszone.com/wp-content/uploads/2019/10/software-developer.jpg'" 
-  %>
-  <div class="card-body">
-    <h5 class="card-title"><%= job.title %></h5>
-    <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
-    <hr style="border-top: 1px solid #444;" />
-    <p class="card-text">
-        <i class="fa fa-user" aria-hidden="true"></i> Owner: <b><%= job.user.name %></b><br/>
-        <i class="fa fa-calendar-o" aria-hidden="true"></i> Upload: <b><%= job.created_at.strftime('%m/%d/%Y') %></b><br/>
-        <i class="fa fa-calendar-o" aria-hidden="true"></i> Updated: <b><%= job.updated_at.strftime('%m/%d/%Y') %></b><br/>
-        <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <b><%= job.location.title + " " + job.location.postcode  %></b><br/>
-        <i class="fa fa-briefcase" aria-hidden="true"></i> Area of experties: <b><%= job.area.title %></b><br/>
-        <i class="fa fa-money" aria-hidden="true"></i> Salary estime: <b><%= job.salary %>€</b>
-    </p>
-    <hr style="border-top: 1px solid #444;" />
-    <% if current_user %>
-        <% if !current_user.company && !@applied.include?(job.id) %>
-            <button style="float:right; margin-left: 10px" onclick="Apply('<%= job.id %>')" class="btn btn-primary">Apply</button>
-        <% end %>
-        <% if @applied.include?(job.id) %>
-            <span style="color: #a44">You applied for the job!</span>
-        <% end %> 
-    <% end %>
-    <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
-  </div>
-</div>
-<% end %>
 
 <script>
-  function Apply(_id) {
-    fetch(`/apply?id=${_id}`).then(response => response.json()).then(result => {
-        if(result.success) {
-            swal("Succesfully applied for the job", ".....", "success").then(() => location.reload());
-        } else {
-            swal({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-            }).then(() => location.reload());
-        }
-        
-    })
-  }
+    function Apply(_id) {
+        fetch(`/apply?id=${_id}`).then(response => response.json()).then(result => {
+            if(result.success) {
+                swal("Succesfully applied for the job", ".....", "success").then(() => location.reload());
+            } else {
+                swal({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                }).then(() => location.reload());
+            }
+            
+        })
+    }
+    function filter() {
+        let url = window.location.href + "?";
+
+        let salary = document.getElementById('salary_').value;
+
+        let filter = document.getElementById('title_').value;
+
+        let area = !document.getElementById('area_').innerHTML.includes("Field") ? 
+            document.getElementById('area_').innerHTML : "";
+
+        let location = !document.getElementById('location_').innerHTML.includes("Location") ? 
+            document.getElementById('location_').innerHTML : "";
+
+        let orderArray = document.getElementById('order_').innerHTML.includes("|") ? 
+            document.getElementById('order_').innerHTML.split("|").map(x => x.trim())
+            : "";
+
+        let order = Array.isArray(orderArray) ? orderArray[0] : "";
+        let type = Array.isArray(orderArray) ? orderArray[1] : "";
+
+        url = salary ? setUrlParameter(url, "s", salary) : url;
+        url = filter ? setUrlParameter(url, "f", filter) : url;
+        url = area ? setUrlParameter(url, "a", area) : url;
+        url = location ? setUrlParameter(url, "l", location) : url;
+        url = order ? setUrlParameter(url, "o", order) : url;
+        url = type ? setUrlParameter(url, "t", type) : url;
+
+        window.location = url;
+    }
 </script>
+
+<hr />
+
+<div class="container-fluid">
+    <div class="row flex-nowrap" style="padding-bottom: 10px; overflow-x: auto">
+        <% @jobs.each do |job| %>
+        <div class="col-3">
+            <div class="card cstm-card">
+            <%= image_tag job.attachment,
+                :class => "card-img-top",
+                :style => "height: 13vw; object-fit: cover;", 
+                :onerror => "this.src='https://mobileappszone.com/wp-content/uploads/2019/10/software-developer.jpg'" 
+            %>
+            <div class="card-body">
+                <h5 class="card-title" style="white-space: nowrap; overflow:hidden"><%= job.title %></h5>
+                <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
+                <hr style="border-top: 1px solid #444;" />
+                <p class="card-text">
+                    <i class="fa fa-user" aria-hidden="true"></i> Owner: <b><%= job.user.name %></b><br/>
+                    <i class="fa fa-calendar-o" aria-hidden="true"></i> Upload: <b><%= job.created_at.strftime('%m/%d/%Y') %></b><br/>
+                    <i class="fa fa-calendar-o" aria-hidden="true"></i> Updated: <b><%= job.updated_at.strftime('%m/%d/%Y') %></b><br/>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <b><%= job.location.title + " " + job.location.postcode  %></b><br/>
+                    <i class="fa fa-briefcase" aria-hidden="true"></i> Area of experties: <b><%= job.area.title %></b><br/>
+                    <i class="fa fa-money" aria-hidden="true"></i> Salary estime: <b><%= job.salary %>€</b>
+                </p>
+                <hr style="border-top: 1px solid #444;" />
+                <% if current_user %>
+                    <% if !current_user.company && !@applied.include?(job.id) %>
+                        <button style="float:right; margin-left: 10px" onclick="Apply('<%= job.id %>')" class="btn btn-primary">Apply</button>
+                    <% end %>
+                    <% if @applied.include?(job.id) %>
+                        <span style="color: #a44">You applied for the job!</span>
+                    <% end %> 
+                <% end %>
+                <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
+            </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
 
 <br style="clear: both">
