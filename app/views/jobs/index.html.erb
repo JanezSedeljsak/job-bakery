@@ -41,13 +41,24 @@
 <br style="clear:both"/>
 
 <% @jobs.each do |job| %>
-<div class="card cstm-card" style="width: 30%; float: left; margin: 5px">
-  <img src="https://i.imgur.com/vCTar9J.jpg" class="card-img-top" alt="...">
+<div class="card cstm-card" style="width: 30%; float: left; margin: 7px">
+  <%= image_tag job.attachment,
+    :class => "card-img-top",
+    :style => "height: 13vw; object-fit: cover;", 
+    :onerror => "this.src='https://mobileappszone.com/wp-content/uploads/2019/10/software-developer.jpg'" 
+  %>
   <div class="card-body">
     <h5 class="card-title"><%= job.title %></h5>
     <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
     <hr style="border-top: 1px solid #444;" />
-    <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<%= job.user.name %></p>
+    <p class="card-text">
+        <i class="fa fa-user" aria-hidden="true"></i> Owner: <b><%= job.user.name %></b><br/>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i> Upload: <b><%= job.created_at.strftime('%m/%d/%Y') %></b><br/>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i> Updated: <b><%= job.updated_at.strftime('%m/%d/%Y') %></b><br/>
+        <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <b><%= job.location.title + " " + job.location.postcode  %></b><br/>
+        <i class="fa fa-briefcase" aria-hidden="true"></i> Area of experties: <b><%= job.area.title %></b><br/>
+    </p>
+    <hr style="border-top: 1px solid #444;" />
     <% if current_user %>
         <% if !current_user.company && !@applied.include?(job.id) %>
             <button style="float:right; margin-left: 10px" onclick="Apply('<%= job.id %>')" class="btn btn-primary">Apply</button>
@@ -64,8 +75,16 @@
 <script>
   function Apply(_id) {
     fetch(`/apply?id=${_id}`).then(response => response.json()).then(result => {
-      alert(result.success ? "Succesfully applied for the job" : "Something went wrong!");
-      location.reload();
+        if(result.success) {
+            swal("Succesfully applied for the job", ".....", "success").then(() => location.reload());
+        } else {
+            swal({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }).then(() => location.reload());
+        }
+        
     })
   }
 </script>

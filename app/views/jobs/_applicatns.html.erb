@@ -1,5 +1,6 @@
-<h2>Candidates for: <%= @job.title %></h2>
-<hr/>
+<h2 style="float: left">Candidates for: <%= @job.title %></h2>
+<button class="btn btn-dark" onclick="history.go(-1);" style="float:right"><i class="fa fa-backward" aria-hidden="true"></i> Back</button>
+<hr style="clear:both"/>
 <% if @candidates.length > 0 %>
     <table class="table" style="border-radius: 10px; width: calc(100vw - 450px);">
     <thead class="thead-dark">
