@@ -114,10 +114,10 @@
         let filter = document.getElementById('title_').value;
 
         let area = !document.getElementById('area_').innerHTML.includes("Field") ? 
-            document.getElementById('area_').innerHTML : "";
+            document.getElementById('area_').innerHTML.trim() : "";
 
         let location = !document.getElementById('location_').innerHTML.includes("Location") ? 
-            document.getElementById('location_').innerHTML : "";
+            document.getElementById('location_').innerHTML.trim() : "";
 
         let orderArray = document.getElementById('order_').innerHTML.includes("|") ? 
             document.getElementById('order_').innerHTML.split("|").map(x => x.trim())
@@ -126,12 +126,12 @@
         let order = Array.isArray(orderArray) ? orderArray[0] : "";
         let type = Array.isArray(orderArray) ? orderArray[1] : "";
 
-        url = salary ? setUrlParameter(url, "s", salary) : url;
-        url = filter ? setUrlParameter(url, "f", filter) : url;
-        url = area ? setUrlParameter(url, "a", area) : url;
-        url = location ? setUrlParameter(url, "l", location) : url;
-        url = order ? setUrlParameter(url, "o", order) : url;
-        url = type ? setUrlParameter(url, "t", type) : url;
+        url = setUrlParameter(url, "s", salary ? salary : 0);
+        url = setUrlParameter(url, "f", filter ? filter : "");
+        url = setUrlParameter(url, "a", area ? area : "");
+        url = setUrlParameter(url, "l", location ? loaction : "");
+        url = setUrlParameter(url, "o", order ? order : "");
+        url = setUrlParameter(url, "t", type ? type : "");
 
         window.location = url;
     }
