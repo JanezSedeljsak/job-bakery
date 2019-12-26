@@ -13,7 +13,7 @@
     </thead>
     <tbody style="background: #eeeeee99">
         <% @candidates.each_with_index do |candidate, index| %>
-            <tr>
+            <tr onclick="window.location = '/profile/<%= candidate.user.id %>'">
                 <th scope="row"><%= index + 1 %></th>
                 <td><%= candidate.user.name %></td>
                 <td><%= candidate.user.email %></td>
@@ -25,3 +25,10 @@
 <% else %>
     <h2 class="text-white">No Applicatns yet</h2>
 <% end %>
+
+<style>
+    tr:hover {
+        background: #fff;
+        cursor:pointer;
+    }
+</style>

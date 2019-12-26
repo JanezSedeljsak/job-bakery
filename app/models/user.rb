@@ -8,5 +8,8 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   has_many :candidates, dependent: :destroy
 
+  mount_uploader :avatar, AttachmentUploader
+  mount_uploader :biography, BiographyUploader
+
   acts_as_commontator
 end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "base#index"
   get '/apply', to: 'candidates#apply'
   get '/jobs/applicatns/:id', to: 'jobs#applicants'
-  get '/profile', to: 'profile#index'
+  get '/profile/:id', to: 'base#profile'
   mount Commontator::Engine => '/commontator'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
