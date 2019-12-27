@@ -19,12 +19,14 @@
 
         <div class="form-group field" style="width: 80%">
             <%= form.label :body %>
-            <%= form.text_area :body, id: :job_body, class:"form-control" %>
+            <%= form.text_area :body, id: :job_body, class:"form-control", :id => "txtarea" %>
+            <script>CKEDITOR.replace( 'txtarea' );</script>
         </div>
 
         <div class="form-group field" style="width: 80%">
             <%= form.label :"Salary per month" %>
             <%= form.text_field :salary, id: :job_title, class:"form-control" %>
+            
         </div>
         
         <div class="form-group" style="width: 80%">

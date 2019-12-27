@@ -11,7 +11,8 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><%= @job.title %></h5>
-        <p class="card-text"><%= @job.body %></p>
+        <hr/>
+        <p class="card-text"><%= raw @job.body %></p>
         <hr/>
         <i class="fa fa-user" aria-hidden="true"></i> Owner: <b><%= @job.user.name %></b><br/>
         <i class="fa fa-calendar-o" aria-hidden="true"></i> Upload: <b><%= @job.created_at.strftime('%m/%d/%Y') %></b><br/>
