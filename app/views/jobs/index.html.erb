@@ -166,7 +166,7 @@
                         <button style="float:right; margin-left: 10px" onclick="Apply('<%= job.id %>')" class="btn btn-primary">Apply</button>
                     <% end %>
                     <% if @applied.include?(job.id) %>
-                        <span style="color: #a44">You applied for the job!</span>
+                        <span style="color: #a44">Applied!</span>
                     <% end %> 
                 <% end %>
                 <%= link_to 'Details', job, class:'btn btn-dark text-white', style:"float:right" %>
