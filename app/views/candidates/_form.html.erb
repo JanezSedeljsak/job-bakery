@@ -1,22 +1,25 @@
-<%= form_with(model: candidate, local: true) do |form| %>
-  <% if candidate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+<div style="width: 100%">
+  <%= form_with(model: candidate, local: true) do |form| %>
+    <% if candidate.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
 
-      <ul>
-      <% candidate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+        <% candidate.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <div class="form-group" style="width: 80%">
+          <%= form.label :"Job Experties" %>
+          <%= form.text_field :salary, id: :job_title, class:"form-control", :id => "txtarea" %>
+           <script>CKEDITOR.replace( 'txtarea' );</script>
+      </div>
+
+      <div class="actions">
+          <%= form.submit 'Apply for the job', :class => 'btn btn-primary' %>
+      </div>
   <% end %>
-
-    <div class="form-group" style="width: 80%">
-        <%= form.label :Area %>
-        <%= form.select(:job_id, Job.all.collect {|u| [u.title, u.id]}, { :include_blank => false },  {:class => 'form-control'}) %>
-    </div>
-
-    <div class="actions">
-        <%= form.submit %>
-    </div>
-<% end %>
+</div>
