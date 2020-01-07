@@ -18,7 +18,6 @@
     %>
   <div class="card-body">
     <h5 class="card-title"><%= job.title %></h5>
-    <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
     <hr style="border-top: 1px solid #444;" />
     <p class="card-text">
         <i class="fa fa-calendar-o" aria-hidden="true"></i> Upload: <b><%= job.created_at.strftime('%m/%d/%Y') %></b><br/>

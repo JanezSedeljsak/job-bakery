@@ -151,14 +151,13 @@
             %>
             <div class="card-body">
                 <h5 class="card-title" style="white-space: nowrap; overflow:hidden"><%= job.title %></h5>
-                <p class="card-text" style="white-space: nowrap;"><%= job.body[0..35] %><%= job.body.length > 35 ? '...' : '' %></p>
                 <hr style="border-top: 1px solid #444;" />
                 <p class="card-text">
                     <i class="fa fa-user" aria-hidden="true"></i> Owner: <b><%= job.user.name %></b><br/>
                     <i class="fa fa-calendar-o" aria-hidden="true"></i> Upload: <b><%= job.created_at.strftime('%m/%d/%Y') %></b><br/>
                     <i class="fa fa-calendar-o" aria-hidden="true"></i> Updated: <b><%= job.updated_at.strftime('%m/%d/%Y') %></b><br/>
                     <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <b><%= job.location.title + " " + job.location.postcode  %></b><br/>
-                    <i class="fa fa-briefcase" aria-hidden="true"></i> Area of experties: <b><%= job.area.title %></b><br/>
+                    <i class="fa fa-briefcase" aria-hidden="true"></i> Experties: <b><%= job.area.title %></b><br/>
                     <i class="fa fa-money" aria-hidden="true"></i> Salary estime: <b><%= job.salary %>€</b>
                 </p>
                 <hr style="border-top: 1px solid #444;" />

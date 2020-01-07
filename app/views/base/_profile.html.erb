@@ -1,12 +1,12 @@
 <div class="card mb-3">
   <div class="row no-gutters">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <%= image_tag @user.avatar, 
             :style => "height: 450px; width: 450px; object-fit: cover;", 
             :onerror => "this.src='https://mobileappszone.com/wp-content/uploads/2019/10/software-developer.jpg'" 
         %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
       <div class="card-body">
         <h5 class="card-title"><%= @user.name %></h5>
         <p class="card-text">
