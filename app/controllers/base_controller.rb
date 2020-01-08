@@ -7,9 +7,9 @@ class BaseController < ApplicationController
                 @jobs = Job.where({ user: current_user })
                 render :template => "base/_company"
             else
-                @locations = Location.all
-                @areas = Area.all
-                render :template => "base/_noncompany"
+                @applied = Candidate.where(user: current_user).select(:job_id).map { |n| n["job_id"] }
+                @jobs = Job.where(nil)
+                render :template => "base/_noncompanyuser"
             end
         else
             @locations = Location.all
