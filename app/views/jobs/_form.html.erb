@@ -1,4 +1,4 @@
-<div style="width: 100%">
+<div ng-app="myApp" ng-controller="myCtrl" style="width: 100%">
     <%= form_with(model: job, local: true) do |form| %>
     <% if job.errors.any? %>
         <div id="error_explanation">
@@ -44,8 +44,76 @@
             <%= form.file_field :attachment %>
         </div>
 
+        <div ng-if="isNew()" style="margin-left: 20px">
+            <h2>Additional questions</h2>
+            <hr/>
+            <ul class="list-group">
+                <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                    ng-repeat="item in questions track by $index">
+                    {{ item }}
+                    <button ng-click="delQuestion($index)" class="btn btn-danger">&times;</button>
+                </li>
+            </ul>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                <input placeholder="Write a question..." class="form-control" ng-model="_question" />
+                </div>
+                <div class="col-3">
+                    <button ng-click="addQuestion()" class="btn btn-primary">Add Question</button>
+                </div>
+            </div>
+            
+            <hr/>
+        </div>
+
+        <br><br><br>
+
+        <script>
+            let app = angular.module("myApp", []);
+            app.controller("myCtrl", [
+                "$scope",
+                "$window",
+                function ($scope, $window) {
+
+                    $scope.questions = [];
+                    $scope._question = "";
+
+                    $scope.addQuestion = function($event) {
+                        window.event.preventDefault();
+                        $scope.questions.push($scope._question);
+                        $scope._question = "";
+                    };
+
+                    $scope.delQuestion = function(index) {
+                        window.event.preventDefault();
+                        $scope.questions.splice(index, 1);
+                    };
+
+                    $scope.submitForm = function() {
+                        window.event.preventDefault();
+                        let _form = $("form").serializeArray();
+                        _form.push({ name: "job[questions]", value: $scope.questions });
+                        let resultForm = {};
+                        for(let item of _form) {
+                            resultForm[item.name] = item.value
+                        }
+                        $.post("/jobs", resultForm);
+                    };
+
+                    $scope.isNew = function() {
+                        return window.location.href.includes('new');
+                    }
+                }
+            ]);
+        </script>
+
         <div class="actions">
-            <%= form.submit 'Sumbit', :class => 'btn btn-primary' %>
+            <button ng-click="submitForm()" class="btn btn-primary" ng-if="isNew()">Add New Job</button>
+            <div ng-if="!isNew()">
+                <%= form.submit 'Sumbit', :class => 'btn btn-primary' %>
+            </div>
         </div>
     <% end %>
 </div>
