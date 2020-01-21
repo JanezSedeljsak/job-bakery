@@ -14,7 +14,7 @@
     </thead>
     <tbody style="background: #eeeeee99">
         <% @candidates.each_with_index do |candidate, index| %>
-            <tr onclick="window.location = '/profile/<%= candidate.user.id %>'">
+            <tr onclick="window.location = '/jobs/single-candidate/<%= candidate.user.id %>/<%= @job.id %>'">
                 <th scope="row"><buton onclick="winodw.location = `jobs/`">+</button></th>
                 <td><%= candidate.user.name %></td>
                 <td><%= candidate.user.email %></td>

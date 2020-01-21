@@ -1,5 +1,36 @@
 <div class="card mb-3">
   <div class="row no-gutters">
- 
+    <div class="col-md-5">
+        <%= image_tag @user.avatar, 
+            :style => "height: 450px; width: 450px; object-fit: cover;", 
+            :onerror => "this.src='https://mobileappszone.com/wp-content/uploads/2019/10/software-developer.jpg'" 
+        %>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.name %></h5>
+        <p class="card-text">
+            <i class="fa fa-user" aria-hidden="true"></i> Full name: <b><%= @user.name %></b><br/>
+            <i class="fa fa-envelope" aria-hidden="true"></i> Email: <b><%= @user.email %></b><br/>
+            <i class="fa fa-cog" aria-hidden="true"></i> Account type: <b><%= @user.company ? "Company" : "Employee" %></b><br/>
+            <i class="fa fa-calendar" aria-hidden="true"></i> Member since: <b><%= @user.created_at.strftime('%m/%d/%Y') %></b>
+        </p>
+        <hr/>
+        <% if @user.biography.length > 0 %>
+            <p class="card-text">
+                <a href="<%= @user.biography %>"><i class="fa fa-file-text" aria-hidden="true"></i> Download biography</a>
+            </p>
+        <% else %>
+            <p class="text-danger">This user doesn't have a biograhpy</p>
+        <% end %>
+        <hr/>
+        <% @questions.each do |question, index| %>
+            <div class="form-group" style="width: 80%">
+                <%= question["body"] %><br>
+                <b><%= @answers.select { |item| item["question_id"].to_i == question["id"].to_i }[0]["body"]  %></b><br>
+            </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

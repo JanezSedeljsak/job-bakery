@@ -13,6 +13,10 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
+    @user = User.find(params[:id_u])
+    @questions = Question.where(job_id: params[:id_j])
+    question_ids = Question.where(job_id: params[:id_j]).select(:id).map { |n| n["id"] }
+    @answers = Answer.where("user_id = ? AND question_id IN (?)", params[:id_u], question_ids)
   end
 
   # GET /candidates/new
@@ -77,7 +81,9 @@ class CandidatesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_candidate
-      @candidate = Candidate.find(params[:id])
+        if params[:id]
+            @candidate = Candidate.find(params[:id])
+        end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
