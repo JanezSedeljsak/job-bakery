@@ -65,8 +65,18 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
 
+    success = @job.save
+    puts @job.id
+
+    params["job"]["questions"].each do |item|
+        @question = Question.new(:job_id => @job.id, :body => item)
+        puts @question
+        puts item
+        @question.save
+    end
+
     respond_to do |format|
-      if @job.save
+      if success
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
@@ -114,6 +124,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:user_id, :title, :body, :location_id, :area_id, :attachment, :salary)
+      params.require(:job).permit(:user_id, :title, :body, :location_id, :area_id, :attachment, :salary, :questions)
     end
 end

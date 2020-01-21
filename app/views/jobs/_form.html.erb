@@ -58,7 +58,7 @@
             <br>
             <div class="row">
                 <div class="col-6">
-                <input placeholder="Write a question..." class="form-control" ng-model="_question" />
+                <input placeholder="Write a question..." class="form-control" id="question" />
                 </div>
                 <div class="col-3">
                     <button ng-click="addQuestion()" class="btn btn-primary">Add Question</button>
@@ -78,12 +78,12 @@
                 function ($scope, $window) {
 
                     $scope.questions = [];
-                    $scope._question = "";
 
-                    $scope.addQuestion = function($event) {
+                    $scope.addQuestion = function() {
+                        debugger;
                         window.event.preventDefault();
-                        $scope.questions.push($scope._question);
-                        $scope._question = "";
+                        $scope.questions.push(document.getElementById('question').value);
+                        document.getElementById('question').value = "";
                     };
 
                     $scope.delQuestion = function(index) {
