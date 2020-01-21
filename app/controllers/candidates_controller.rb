@@ -33,8 +33,10 @@ class CandidatesController < ApplicationController
     parsedAnswers = JSON.parse(params["candidate"]["answers"]) 
 
     parsedAnswers.each do |item|
+        @answer = Answer.new(:question_id => item["question_id"].to_i, :body => item["body"], :user_id => current_user.id)
+        puts @answer
         puts item
-        puts "lol"
+        @answer.save
     end
 
     respond_to do |format|

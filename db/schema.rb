@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200121172451) do
+ActiveRecord::Schema.define(version: 20200121213722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "applicants", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "jobs_id"
+  create_table "answers", force: :cascade do |t|
+    t.string "body"
+    t.bigint "question_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["jobs_id"], name: "index_applicants_on_jobs_id"
-    t.index ["users_id"], name: "index_applicants_on_users_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "areas", force: :cascade do |t|
@@ -138,8 +139,8 @@ ActiveRecord::Schema.define(version: 20200121172451) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "applicants", "jobs", column: "jobs_id"
-  add_foreign_key "applicants", "users", column: "users_id"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
   add_foreign_key "candidates", "jobs"
   add_foreign_key "candidates", "users"
   add_foreign_key "commontator_comments", "commontator_comments", column: "parent_id", on_update: :restrict, on_delete: :cascade
