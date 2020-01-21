@@ -1,4 +1,4 @@
-<div style="width: 100%">
+<div ng-app="myApp" ng-controller="myCtrl" style="width: 100%">
   <%= form_with(model: candidate, local: true) do |form| %>
     <% if candidate.errors.any? %>
       <div id="error_explanation">
@@ -21,15 +21,42 @@
           <script>CKEDITOR.replace( 'txtarea' );</script>
         </div>
 
-        <% @questions.each do |question| %>
+        <% @questions.each do |question, index| %>
             <div class="form-group" style="width: 80%">
                 <label><%= question["body"] %><br></label>
-                <%= form.text_area :expreties, class:"form-control" %>
+                <%= form.text_area :question, class:"form-control form-answer", id:question["id"] %>
             </div>
         <% end %>
 
         <div class="actions">
-          <%= form.submit 'Apply for the job', :class => 'btn btn-primary' %>
+            <button class='btn btn-primary' ng-click="submit()">Apply</button>
         </div>
+
+  <script>
+            let app = angular.module("myApp", []);
+            app.controller("myCtrl", [
+                "$scope",
+                "$window",
+                function ($scope, $window) {
+                    $scope.submit = function() {
+                        window.event.preventDefault();
+                        let formAnswers = [];
+                        $(".form-answer").each(function() { 
+                            formAnswers.push({
+                                question_id: this.id,
+                                body: this.value
+                            });
+                        });
+                        let _form = $("form").serializeArray().slice(0,5);
+                        _form.push({
+                            "name": "candidate[answers]", 
+                            "value": JSON.stringify(formAnswers) 
+                        });
+
+                        $.post("/candidates", _form);
+                    }
+                }
+            ]);
+        </script>
   <% end %>
 </div>

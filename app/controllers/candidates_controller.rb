@@ -1,3 +1,5 @@
+require "json"
+
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
@@ -27,6 +29,13 @@ class CandidatesController < ApplicationController
   def create
     @candidate = Candidate.new(candidate_params)
     @candidate.user_id = current_user.id
+
+    parsedAnswers = JSON.parse(params["candidate"]["answers"]) 
+
+    parsedAnswers.each do |item|
+        puts item
+        puts "lol"
+    end
 
     respond_to do |format|
       if @candidate.save
