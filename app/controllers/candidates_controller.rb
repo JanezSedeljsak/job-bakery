@@ -16,6 +16,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/new
   def new
     @candidate = Candidate.new
+    @questions = Question.where(job_id: params[:id])
   end
 
   # GET /candidates/1/edit

@@ -20,6 +20,10 @@
         <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <b><%= @job.location.title + " " + @job.location.postcode  %></b><br/>
         <i class="fa fa-briefcase" aria-hidden="true"></i> Area of experties: <b><%= @job.area.title %></b><br/>
         <i class="fa fa-money" aria-hidden="true"></i> Salary estime: <b><%= @job.salary %>€</b>
+        <hr/>
+        <% @questions.each do |question| %>
+            <%= question["body"] %><br>
+        <% end %>
       </div>
     </div>
   </div>

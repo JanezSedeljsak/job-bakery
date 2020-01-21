@@ -15,14 +15,21 @@
       <%= hidden_field(:candidate, :job_id, :value => params[:id]) %>
       <%= hidden_field(:candidate, :user_id, :value => current_user.id) %>
 
-      <div class="form-group" style="width: 80%">
+        <div class="form-group" style="width: 80%">
           <%= form.label :"Write some of your experience in this field!" %>
           <%= form.text_area :expreties, class:"form-control", :id => "txtarea" %>
-           <script>CKEDITOR.replace( 'txtarea' );</script>
-      </div>
+          <script>CKEDITOR.replace( 'txtarea' );</script>
+        </div>
 
-      <div class="actions">
+        <% @questions.each do |question| %>
+            <div class="form-group" style="width: 80%">
+                <label><%= question["body"] %><br></label>
+                <%= form.text_area :expreties, class:"form-control" %>
+            </div>
+        <% end %>
+
+        <div class="actions">
           <%= form.submit 'Apply for the job', :class => 'btn btn-primary' %>
-      </div>
+        </div>
   <% end %>
 </div>
