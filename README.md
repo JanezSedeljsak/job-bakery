@@ -20,7 +20,7 @@ This is a websystem application that provides employees and companies to find ea
 * PostgradeSQL
 
 ## Built With
-* [RubyOnRails](https://rubyonrails.org)
+* [Rails](https://rubyonrails.org)
 * [Bootstrap](https://getbootstrap.com)
 * some extra js libraries....
 
